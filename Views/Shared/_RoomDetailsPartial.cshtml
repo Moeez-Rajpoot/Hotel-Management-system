@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Hotel_Management_System.Models.RoomDetailsViewModel>
+
+
+<style>
+    tr:nth-child(even) {
+        background-color: rgba(150, 212, 212, 0.4);
+        height: 40px;
+        padding: 5px;
+    }
+    tr:nth-child(odd) {
+        height: 40px;
+        padding: 5px;
+    }
+    th {
+        height: 60px;
+        padding: 5px;
+    }
+ 
+</style>
+<table  style="width: 100%;">
+    <thead>
+        <tr style="background-color: #337ab7;">
+            <th >
+                Action
+            </th>
+            <th>
+                Room Image
+            </th>
+            <th>
+                Room No
+            </th>
+            <th>
+                Room Price
+            </th>
+            <th>
+                Room Status
+            </th>
+            <th>
+                Room Type
+            </th>
+            <th>
+                Room Capacity
+            </th>
+            <th>
+                Room Description
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td >
+                    <span style="padding:10px" id="btnDelete" class="glyphicon glyphicon-trash" onclick="DeleteRoom(@item.RoomId)"></span> &nbsp;
+                    <span  id="btnEdit" class="glyphicon glyphicon-pencil"  onclick="EditRoom(@item.RoomId)"></span>
+                </td>
+                <td style="padding:10px">
+                    <img src="@Url.Content("~/RoomImages/" + item.RoomImage)" , width="40" height="40"  class="img-responsive" />
+
+                </td>
+                <td>
+                    @item.RoomNumber
+                </td>
+                <td>
+                    @item.RoomPrice
+                </td>
+                <td>
+                    @item.BookingStatus
+                </td>
+                <td>
+                    @item.RoomType
+                </td>
+                <td>
+                    @item.RoomCapacity
+                </td>
+                <td>
+                    @item.RoomDescription
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

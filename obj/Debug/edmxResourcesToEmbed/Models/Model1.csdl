@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HotelDBNamespace" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookingId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentTypeId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IsActive" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BookingStatu">
+    <Key>
+      <PropertyRef Name="BookingStatusid" />
+    </Key>
+    <Property Name="BookingStatusid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookingStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentType">
+    <Key>
+      <PropertyRef Name="PaymentTypeId" />
+    </Key>
+    <Property Name="PaymentTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PaymentType1" Type="String" MaxLength="550" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="HotelDBModel" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="BookingStatus" EntityType="Self.BookingStatu" />
+    <EntitySet Name="PaymentTypes" EntityType="Self.PaymentType" />
+    <EntitySet Name="Roomtypes" EntityType="HotelDBNamespace.Roomtype" />
+    <EntitySet Name="Rooms" EntityType="HotelDBNamespace.Room" />
+    <EntitySet Name="RoomBookings" EntityType="HotelDBNamespace.RoomBooking" />
+  </EntityContainer>
+  <EntityType Name="Roomtype">
+    <Key>
+      <PropertyRef Name="RoomTypeid" />
+    </Key>
+    <Property Name="RoomTypeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoomTypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="RoomId" />
+    </Key>
+    <Property Name="RoomId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoomNumber" Type="Int32" Nullable="false" />
+    <Property Name="RoomImage" Type="String" Nullable="false" MaxLength="550" FixedLength="false" Unicode="false" />
+    <Property Name="RoomPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="BookingStatusid" Type="Int32" Nullable="false" />
+    <Property Name="RoomTypeid" Type="Int32" Nullable="false" />
+    <Property Name="RoomCapacity" Type="Int32" Nullable="false" />
+    <Property Name="RoomDescription" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="RoomBooking">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="BookingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerPhoneNo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerCnic" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BookingDays" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AssignRoomId" Type="Int32" Nullable="false" />
+    <Property Name="NoOfMembers" Type="Int32" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Hotel Reservation</title>
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+    <!-- Stylesheet
+        ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
+    <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</head>
+
+
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+           <b> <a class="navbar-brand page-scroll" href="#page-top">HOTEL REV</a></b>
+        </div>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li><a href="#about" class="page-scroll">About</a></li>
+                    <li>@Html.ActionLink("Room", "Index", "Room")</li>
+                    <li>@Html.ActionLink("Booking", "Index", "Booking")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+  
+    <div class="container body-content" style="width:100%">
+        @RenderBody()
+       </div>
+
+        <div id="footer">
+            <div class="container text-center">
+                <div class="col-md-4">
+                    <h3>Address</h3>
+                    <div class="contact-item">
+                        <p>Air University Kamra,</p>
+                        <p>Oxford Campus Attock</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3>Opening Hours</h3>
+                    <div class="contact-item">
+                        <p>Mon-Thurs: 10:00 AM - 11:00 PM</p>
+                        <p>Fri-Sun: 11:00 AM - 02:00 AM</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3></h3>
+                    <div class="contact-item">
+                        <h3>Contact Us Us</h3>
+                        <p>Phone: 123456789</p>
+                        <p>Email: 205328@aack.au.edu.pk</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid text-center copyrights">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="social">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+                    <p>&copy; Designed By Moeez Rajpoot</a></p>
+                </div>
+            </div>
+        </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/SmoothScroll.js"></script>
+    <script type="text/javascript" src="js/nivo-lightbox.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.js"></script>
+    <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+    <script type="text/javascript" src="js/contact_me.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

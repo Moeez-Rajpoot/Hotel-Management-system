@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Hotel_Management_System.Models.BookingViewModel>
+
+<style>
+    tr:nth-child(even) {
+        background-color: rgba(150, 212, 212, 0.4);
+        height: 40px;
+        
+    }
+    tr:nth-child(odd) {
+        height: 40px;
+        
+    }
+
+    th {
+        height: 60px;
+        
+    }
+    
+</style>
+<table style="width: 100%;">
+    <thead>
+        <tr style="background-color: #337ab7;">
+            <th>
+                Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Cnic
+            </th>
+            <th>
+                Phone No
+            </th>
+            <th>
+                No Of Days
+            </th>
+            <th>
+                Room
+            </th>
+            <th>
+                No Of Members
+            </th>
+            <th>
+                Total Amount
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.CustomerName
+                    </td>
+                    <td>
+                        @item.CustomerAddress
+                    </td>
+                    <td>
+                        @item.CustomerPhoneNo
+                    </td>
+                    <td>
+                        @item.CustomerCnic
+                    </td>
+                    <td>
+                        @item.BookingDays
+                    </td>
+                    <td>
+                        @item.AssignRoomId
+                    </td>
+                    <td>
+                        @item.NoOfMembers
+                    </td>
+                    <td>
+                        @item.TotalAmount
+                    </td>
+
+                </tr>
+            }
+    </tbody>
+</table>
